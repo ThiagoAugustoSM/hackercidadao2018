@@ -16,6 +16,11 @@ export default new Router({
       path: '/mapas',
       name: 'Mapas',
       component: Mapas
+    },
+    {
+      path: '/vagas',
+      name: 'Vagas',
+      component: Vagas
     }
   ]
 })
