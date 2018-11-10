@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/views/HelloWorld'
-import Vagas from '@/components/views/Vagas'
+import HelloWorld from '@/components/views/HelloWorld.vue'
+import Mapas from '@/components/views/Mapas.vue'
+
+
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -11,9 +13,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/vagas',
-      name: 'Vagas',
-      component: Vagas
+      path: '/mapas',
+      name: 'Mapas',
+      component: Mapas
     }
   ]
 })

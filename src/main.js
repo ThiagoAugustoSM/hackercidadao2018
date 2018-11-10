@@ -3,15 +3,16 @@ import './plugins/vuetify'
 import App from './App.vue'
 import * as VueGoogleMaps from "vue2-google-maps"
 import router from './router'
-import Vuetify from '../node_modules/vuetify'
+
+
 
 Vue.config.productionTip = false
 
-Vue.use(Vuetify)
+
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "REPLACE-THIS-WITH-YOUR-KEY-FROM-ABOVE",
+    key: "AIzaSyBXhEJdWg3Bvm5JkUfaJi_CNFsa8v2HfGg",
     libraries: "places" // necessary for places input
   }
 });
