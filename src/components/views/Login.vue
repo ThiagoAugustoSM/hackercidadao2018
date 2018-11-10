@@ -1,0 +1,65 @@
+<template>
+    <v-container fluid fill-height class="ma-0 pa-0 fundoTela bodyLogin">
+        <v-layout column class="pt-4">
+            <v-flex xs4 style="display:flex; flex-direction: column; justify-content:center; align-items:center;">
+                <div style="background-color: white; height:10em; width:10em; border-radius:100%;">
+                </div>
+            </v-flex>
+            <v-flex xs4 style="display:flex; flex-direction:column; justify-content:center; align-items:center;"> 
+                
+                <input type="text" placeholder="CPF" style="margin-bottom: 5%;" class="loginButton" />
+                <input type="password" placeholder="Senha" class="loginButton"/>
+                
+                <v-btn to="/vagas" round color="#FDE019" style="color:#024FA1;  margin-top: 10%; width:27.5%;">entrar</v-btn>
+            </v-flex>
+            <v-flex xs2 style="display:flex; flex-direction:column; justify-content:center; align-items: center;">
+                <p class="options" style="color:yellow; margin: 0; font-size: 17px "> Fazer cadastro </p>
+                <p class="options" style="color:yellow; margin:0; margin-top:4px; font-size: 17px"> Esqueci a minha senha </p>
+            </v-flex>
+        </v-layout>
+    </v-container>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+
+      };
+    }  
+  }
+</script>
+
+
+<style scoped>
+    .fundoTela{
+        background-color:#024FA1;
+        height: 100%;
+    }
+    ::placeholder {
+        color: white;
+        opacity: 1; /* Firefox */
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+    }
+    .loginButton{
+        border:2px solid #FDE019; 
+        border-radius: 2.5em;  
+        height:3em; 
+        width: 55%;
+        padding-left:5%;
+        
+        
+    }
+    .options{
+        
+        font-weight:bold;
+    }
+
+    
+</style>
