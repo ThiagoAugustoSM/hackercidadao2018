@@ -14,8 +14,8 @@
       <div class="ball"><i class="fas fa-filter" style="margin:auto"></i></div>
     </v-layout>
     <v-container fluid grid-list-sm class="ma-0 pa-0">
-      <v-layout row wrap justify-center align-center>
-        <v-flex v-for="i in filteredVagas" :key="i" xs6>
+      <v-layout row wrap justify-center fill-height>
+        <v-flex v-for="i in filteredVagas" style="display:flex; align-items: stretch;"  :key="i" xs6>
           <vagas-card 
             v-if='i.nome!=""'
             :title="i.nome"
@@ -46,7 +46,7 @@
       };
     },
     created() {
-      fetch('http://10.98.251.18:3030/api').then(res=> res.json())
+      fetch('http://10.98.251.11:3030/api').then(res=> res.json())
       .then(res => this.dados = res);
       // .then(res=> console.log(res));
     },
