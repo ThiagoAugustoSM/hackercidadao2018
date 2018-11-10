@@ -1,44 +1,31 @@
 <template>
-  <v-card class="elevation-10 my-2">
-      <h2 class="title text-xs-center mb-2 pt-2" >{{title}}</h2>
-    <v-divider/>
-    <v-card-media>
-      <v-container>
-        <v-layout row wrap align-center justify-center>
-          <v-flex>
-            <h4 class="subheading">Estudo</h4>
-          </v-flex>
-          <v-flex>
-            <h4 class="subheading">Ensino Médio Completo</h4>
-          </v-flex>
-        </v-layout>
-        <v-divider/>
-        <v-layout row wrap justify-center class="my-2">
-          <v-flex>
-            <h4 class="subheading">Experiência</h4>
-          </v-flex>
-          <v-flex>
-            <h4 class="subheading">Primeiro Emprego</h4>
-          </v-flex>
-        </v-layout>
-        <v-divider/>
-        <v-layout row wrap justify-space-between class="my-2">
-          <v-flex>
-            <h4 class="subheading">Quantidade Vagas</h4>
-          </v-flex>
-          <v-flex>
-            <h4 class="subheading">2</h4>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-card-media>
+  <v-card class="elevation-2 my-2" style="border-radius: 0.5em; width:95%;">
+    <h2 class="text-uppercase body-2 text-xs-center mb-2 pt-2 mx-1"
+          style="color:blue; font-family:'Helvetica'; font-size: 11px; font-weight: 700;">{{title}}</h2>
+    <v-container class="mb-0 pt-0">
+      <v-layout column align-center justify-center class="my-0 py-0">
+        <h4 class="body-1 text-xs-center ma-0">R$ {{salario}}</h4>
+        <h4 class="body-1 text-xs-center ma-0">{{local}}</h4>
+        <h4 class="body-1 text-xs-center ma-0">{{experiencia}}</h4>
+        <h4 class="body-1 text-xs-center ma-0">{{vaga}} vaga</h4>
+      </v-layout>
+      <v-layout justify-center align-center>
+        <v-btn color="amber lighten-2" class="ma-0 mt-2" style="border-radius:2.5em; width: 90%; font-size:11px;">
+          Tenho Interesse
+        </v-btn>
+      </v-layout>
+    </v-container>
   </v-card>
 </template>
 
 <script>
 export default {
   props:{
+    salario: Number,
     title: String,
+    local: String,
+    vaga: Number,
+    experiencia: String,
   },
   data () {
     return {

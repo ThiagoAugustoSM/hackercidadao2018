@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/views/HelloWorld.vue'
 import Mapas from '@/components/views/Mapas.vue'
 import Vagas from '@/components/views/Vagas.vue'
+import Cadastro from '@/components/views/Cadastro.vue'
 
 
 Vue.use(Router)
@@ -22,6 +23,11 @@ export default new Router({
       path: '/vagas',
       name: 'Vagas',
       component: Vagas
+    },
+    {
+      path: '/cadastro',
+      name: 'Cadastro',
+      component: Cadastro
     }
   ]
 })
