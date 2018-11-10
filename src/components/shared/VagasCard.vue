@@ -1,8 +1,6 @@
 <template>
   <v-card class="elevation-10 my-2">
-    <v-card-title>
-      <h2 class="title">{{title}}</h2>
-    </v-card-title>
+      <h2 class="title text-xs-center mb-2 pt-2" >{{title}}</h2>
     <v-divider/>
     <v-card-media>
       <v-container>
