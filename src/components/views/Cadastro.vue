@@ -8,10 +8,10 @@
             <v-text-field  v-model="name" label="Nome Completo*" class="text-field" required></v-text-field>
             <v-flex xs7 class="px-0" style="padding-right: 15px !important"><v-text-field  v-model="cpf" label="CPF*" class="text-field" required></v-text-field></v-flex>
             <v-flex xs5 class="px-0"><v-select :items="genero" label="Gênero*" class="text-field" required></v-select></v-flex>
-            <v-flex xs12><v-text-field  v-model="name" label="Data de Nascimento*" mask='date' class="text-field" required></v-text-field></v-flex>
+            <v-flex xs5 class="px-0" style="padding-right: 15px !important"><v-text-field label="Celular" class="text-field" ></v-text-field></v-flex>
+            <v-flex xs7><v-text-field  v-model="name" label="Data de Nascimento*" mask='date' class="text-field" required></v-text-field></v-flex>
             <v-flex xs12 class="px-0"><v-autocomplete :items="bairros" label="Bairro*" class="text-field" required></v-autocomplete></v-flex>
-            <v-flex xs6 class="px-0" style="padding-right: 15px !important"><v-text-field  v-model="email" label="Email" class="text-field" required></v-text-field></v-flex>
-            <v-flex xs6 class="px-0"><v-text-field label="Celular" class="text-field" ></v-text-field></v-flex>
+            <v-flex xs12 class="px-0"><v-text-field  v-model="email" label="Email" class="text-field" required></v-text-field></v-flex>
             <v-flex xs12 class="px-0"><v-select :items="escolaridade" label="Escolaridade*" class="text-field" ></v-select></v-flex>
             <v-flex xs12><v-combobox v-model="select" multiple chips label='Areas de Interesse' :items='areas' class="text-field"></v-combobox></v-flex>
             <v-flex xs12><v-combobox v-model="select" multiple chips label='Possui alguma deficiência?' :items='deficiencia' class="text-field"></v-combobox></v-flex>
