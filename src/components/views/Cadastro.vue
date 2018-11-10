@@ -15,10 +15,10 @@
             <v-flex xs12 class="px-0"><v-select :items="escolaridade" label="Escolaridade*" class="text-field" ></v-select></v-flex>
             <v-flex xs12><v-combobox v-model="select" multiple chips label='Areas de Interesse' :items='areas' class="text-field"></v-combobox></v-flex>
             <v-flex xs12><v-combobox v-model="select" multiple chips label='Possui alguma deficiência?' :items='deficiencia' class="text-field"></v-combobox></v-flex>
-            <v-flex xs12 justify-center style='margin-top:20px;display:flex;'><v-btn to="vagas" class="btn-prox" style="font-size: 16px;">Cadastrar</v-btn></v-flex>
+            <v-flex xs12 justify-center style='margin-top:20px;display:flex;background-color:transparent;color:#024fa1;'><v-btn to="vagas" class="btn-prox" style="color:#024fa1;">Cadastrar</v-btn></v-flex>
           </v-layout>
         </v-form>
-        <v-btn to="/" @click="persist" style=" margin:10px;box-shadow:none;color:#024fa1;font-size:1.0em">Voltar</v-btn>
+        <v-btn to="/" @click="persist" style=" margin:10px;box-shadow:none;color:#024fa1;font-size:1.0em;background-color:transparent">Voltar</v-btn>
       </v-layout>
     </v-container>
   </v-container>
