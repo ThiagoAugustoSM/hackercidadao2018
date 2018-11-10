@@ -10,7 +10,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/hello',
       name: 'HelloWorld',
       component: HelloWorld
     },
@@ -30,7 +30,7 @@ export default new Router({
       component: Cadastro
     },
     {
-      path: '/login',
+      path: '/',
       name: 'Login',
       component:Login
     }

@@ -13,7 +13,9 @@
                 <v-btn to="/vagas" round color="#FDE019" style="color:#024FA1;  margin-top: 10%; width:27.5%; height:3em">entrar</v-btn>
             </v-flex>
             <v-flex xs2 style="display:flex; flex-direction:column; justify-content:center; align-items: center;margin-top:1em">
-                <p class="options" style="color:yellow; margin: 0; font-size: 17px "> Fazer cadastro </p>
+                <router-link to='cadastro' style="text-decoration: none;">
+                <p  class="options" style="color:yellow; margin: 0; font-size: 17px;text-decoration: none; "> Fazer cadastro </p>
+                </router-link>
                 <p class="options" style="color:yellow; margin:0; margin-top:4px; font-size: 17px"> Esqueci a minha senha </p>
             </v-flex>
         </v-layout>

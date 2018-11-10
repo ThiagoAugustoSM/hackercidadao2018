@@ -68,7 +68,7 @@
       <router-view></router-view>
     </v-content>
     
-    <v-footer  fixed height="auto"  app>
+    <v-footer  v-if="!($route.name == 'Login' || $route.name == 'Cadastro')" fixed height="auto"  app>
       <v-bottom-nav  style="margin: auto;" row wrap :active.sync="bottomNav" :value="true" absolute>
         <v-btn  to="/vagas" style="height:100%; padding:auto;"  flat value="vagas" >
           <div class="footerIcon">
@@ -114,6 +114,9 @@ export default {
       showingNav: true,
       bottomNav: ''
     }
+  },
+  mounted () {
+    console.log(this.$route)
   },
   methods: {
     teste () {
