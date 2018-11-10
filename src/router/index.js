@@ -5,12 +5,14 @@ import Mapas from '@/components/views/Mapas.vue'
 import Vagas from '@/components/views/Vagas.vue'
 import Cadastro from '@/components/views/Cadastro.vue'
 import Login from '@/components/views/Login.vue'
+import Curriculo from '@/components/views/Curriculo.vue'
+
 
 Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/hello',
       name: 'HelloWorld',
       component: HelloWorld
     },
@@ -30,9 +32,14 @@ export default new Router({
       component: Cadastro
     },
     {
-      path: '/login',
+      path: '/',
       name: 'Login',
       component:Login
+    },
+    {
+      path: '/curriculo',
+      name: 'Curriculo',
+      component: Curriculo
     }
   ]
 })
