@@ -2,8 +2,7 @@
     <v-container fluid fill-height class="ma-0 pa-0 fundoTela bodyLogin">
         <v-layout column class="pt-4">
             <v-flex xs4 style="display:flex; flex-direction: column; justify-content:center; align-items:center;">
-                <div style="background-color: white; height:10em; width:10em; border-radius:100%;">
-                </div>
+                <img src='@/assets/faciliti.png' style="width:50%"></img>
             </v-flex>
             <v-flex xs4 style="display:flex; flex-direction:column; justify-content:center; align-items:center; margin-top:2.3em;"> 
                 
