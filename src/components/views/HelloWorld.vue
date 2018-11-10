@@ -1,12 +1,18 @@
 <template> 
-  <corpo/>
+  <v-container>
+    <h2>Thiagosooooo</h2>
+    <h2>Thiagosooooo</h2>
+    <h2>Thiagosooooo</h2>
+    <h2>Thiagosooooo</h2>
+    
+  </v-container>
 </template>
 
 <script>
-  import Corpo from '@/components/shared/Corpo';
+  // import Corpo from '@/components/shared/Corpo';
   export default {
     components:{
-      Corpo
+      // Corpo
     },
     data: () => ({
     })

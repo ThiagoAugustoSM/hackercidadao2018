@@ -1,5 +1,7 @@
 <template>
-  
+  <v-container>
+    <h2>Thiago</h2>
+  </v-container>
 
 </template>
 

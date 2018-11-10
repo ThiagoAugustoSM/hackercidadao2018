@@ -8,12 +8,11 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-Vue.use(Vuetify)
 
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "REPLACE-THIS-WITH-YOUR-KEY-FROM-ABOVE",
+    key: "AIzaSyBXhEJdWg3Bvm5JkUfaJi_CNFsa8v2HfGg",
     libraries: "places" // necessary for places input
   }
 });

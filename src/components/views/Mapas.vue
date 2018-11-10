@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div style="width:100%;">
+
     <div>
       <h2>Search and add a pin</h2>
       <label>
