@@ -47,7 +47,6 @@
     </v-card>
     </div>
   </div>
-  
 </template>
 <style>
   .pop-up{

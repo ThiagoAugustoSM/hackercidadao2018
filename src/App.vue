@@ -23,13 +23,7 @@
 
         <v-btn  to="/perfil" style=""  flat value="perfil" >
           <div class="footerIcon">
-            <i class="fas fa-cog"></i>
-          </div>
-        </v-btn>
-
-        <v-btn  to="/filtro" style="" flat value="filtro" >
-          <div class="footerIcon">
-            <i class="fas fa-filter"></i>
+            <i class="fas fa-user-tie"></i>
           </div>
         </v-btn>
 

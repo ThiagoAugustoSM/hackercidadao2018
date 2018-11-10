@@ -1,13 +1,18 @@
 <template>
 <div>
   <v-container>
-    <v-text-field
-      hide-details
-      append-outer-icon="search"
-      single-line
-      v-model="search"
-    ></v-text-field>
-
+    <v-layout row style="margin-top:0.8em">
+      <v-flex>
+        <v-text-field
+          hide-details
+          single-line
+          v-model="search"
+          label="Pesquisar"
+          style="border-color:#C7C6C6 !important;width:80%;margin-left:1.3em"
+        ></v-text-field>
+      </v-flex>
+      <div class="ball"><i class="fas fa-filter" style="margin:auto"></i></div>
+    </v-layout>
     <v-container fluid grid-list-sm class="ma-0 pa-0">
       <v-layout row wrap justify-center align-center>
         <v-flex v-for="i in filteredVagas" :key="i" xs6>
@@ -57,5 +62,14 @@
 
 
 <style scoped>
-
+  .ball{
+    border-radius:100%;
+    background-color:#FDE019;
+    height:3.5em;
+    width:3.5em;
+    display:flex;
+    color:#024FA1;
+    font-size:1em;
+    margin-right:1.3em;
+  }
 </style>
