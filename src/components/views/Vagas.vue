@@ -8,10 +8,26 @@
           single-line
           v-model="search"
           label="Pesquisar"
-          style="border-color:#C7C6C6 !important;width:80%;margin-left:1.3em"
+          style="border-color:#C7C6C6 !important;width:75%;margin-left:1.3em"
         ></v-text-field>
       </v-flex>
-      <div class="ball"><i class="fas fa-filter" style="margin:auto"></i></div>
+      <v-dialog v-model="dialog">
+          <v-btn slot="activator"                v-show="!hidden"
+                color="#ffd54f"
+                fab
+                dark
+                small
+                absolute
+                top
+                right
+                style="top:3em;right:2em"
+                ><i class="fas fa-search"></i></v-btn>
+          <v-card style="display:flex; alig-items:space-between;flex-direction:column;width:100%;margin-left:auto;margin-right:auto;height:20em;background-color:#FDE019;border:none;padding:15px; border-radius:1.5em;">
+            <h2 style="margin-top:0.5em;width:100%;margin-bottom:1em; text-align:center;color:#024FA1">Olá, João Silva!</h2>
+            <p style="margin-top:7em;color:#5D5C5C;font-size:1.4em;margin-top:1em;text-align:center">Uma vaga é compatível com suas habilidades. Gostaria de visualizá-la?</p>
+            <h3 style="margin-top:2em;border-bottom:2px solid #024FA1;border-radius:0 ;text-align:center;color:#024FA1;width:55%;margin-left:auto;margin-right:auto">Visualizar Vaga</h3>
+          </v-card>
+    </v-dialog>
     </v-layout>
     <v-container fluid grid-list-sm class="ma-0 pa-0">
       <v-layout row wrap justify-center fill-height>
@@ -28,6 +44,7 @@
         </v-flex>
       </v-layout>
     </v-container>
+
   </v-container>
 </div>
 </template>
