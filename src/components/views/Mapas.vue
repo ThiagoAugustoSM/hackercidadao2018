@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div style="position:fixed; width:100%">
+    <v-toolbar style="background-color:#024fa1"><h2 style="width:100%; text-align:center;color:white;font-weight:normal">Locais de Qualificação</h2></v-toolbar>
 <!--
     <div>
       <h2>Search and add a pin</h2>
@@ -17,7 +18,7 @@
       <gmap-map
         :center="center"
         :zoom="12"
-        style="width:100%;  height:600px;position:relative;bottom:20px"
+        style="width:100%;  height:550px;position:relative;bottom:22px"
       >
         <gmap-marker
           :key="index"
@@ -51,7 +52,7 @@
 <style>
   .pop-up{
     position:absolute;
-    bottom:5em;
+    bottom:14.2em;
     left:1em;
     height:8em;
     width:20em;
@@ -67,6 +68,7 @@
     color:#024FA1;;
     padding:0px;
   }
+
 </style>
 
 <script>
@@ -105,12 +107,23 @@ export default {
         this.currentPlace = null;
       }
     },
+    prevent (event) {
+      console.log('something happened')
+      event.preventDefault()
+      event.stopPropagation()
+    },
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {
         this.center = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+        this.makers.push({position:{
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+          },
+          icon:'https://banner2.kisspng.com/20180402/wle/kisspng-computer-icons-location-clip-art-pushpin-5ac1f0d49448a1.5325532715226595406074.jpg'
+        })
       });
     },
     getMarkers(){
@@ -126,7 +139,6 @@ export default {
                                 lng: parseFloat(atualizar.longitude)};
           return atualizar;
         })
-        console.log(this.markers)
         // Success.
       }).catch(err => {
         console.log(err)
