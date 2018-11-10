@@ -7,8 +7,15 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
+<<<<<<< HEAD
     <content src="http://10.98.251.11:8080" />
     <allow-navigation href="http://10.98.251.11:8080" />
+=======
+    <content src="http://10.98.251.18:8080" />
+    <allow-navigation href="http://10.98.251.18:8080" />
+    <allow-navigation href="http://10.98.251.18:8080" />
+    <allow-navigation href="http://10.98.251.18:8080" />
+>>>>>>> 1515e0aa362ca687f2cf80544c07975e14d23bcf
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

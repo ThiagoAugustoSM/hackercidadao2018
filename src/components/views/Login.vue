@@ -5,14 +5,14 @@
                 <div style="background-color: white; height:10em; width:10em; border-radius:100%;">
                 </div>
             </v-flex>
-            <v-flex xs4 style="display:flex; flex-direction:column; justify-content:center; align-items:center;"> 
+            <v-flex xs4 style="display:flex; flex-direction:column; justify-content:center; align-items:center; margin-top:2.3em;"> 
                 
                 <input type="text" placeholder="CPF" style="margin-bottom: 5%;" class="loginButton" />
                 <input type="password" placeholder="Senha" class="loginButton"/>
                 
-                <v-btn to="/vagas" round color="#FDE019" style="color:#024FA1;  margin-top: 10%; width:27.5%;">entrar</v-btn>
+                <v-btn to="/vagas" round color="#FDE019" style="color:#024FA1;  margin-top: 10%; width:27.5%; height:3em">entrar</v-btn>
             </v-flex>
-            <v-flex xs2 style="display:flex; flex-direction:column; justify-content:center; align-items: center;">
+            <v-flex xs2 style="display:flex; flex-direction:column; justify-content:center; align-items: center;margin-top:1em">
                 <p class="options" style="color:yellow; margin: 0; font-size: 17px "> Fazer cadastro </p>
                 <p class="options" style="color:yellow; margin:0; margin-top:4px; font-size: 17px"> Esqueci a minha senha </p>
             </v-flex>
@@ -51,13 +51,11 @@
         border:2px solid #FDE019; 
         border-radius: 2.5em;  
         height:3em; 
-        width: 55%;
-        padding-left:5%;
-        
-        
+        font-size:1.2em;
+        width: 65%;
+        padding:15px;      
     }
     .options{
-        
         font-weight:bold;
     }
 

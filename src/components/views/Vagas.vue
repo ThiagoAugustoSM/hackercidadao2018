@@ -5,17 +5,20 @@
       hide-details
       append-outer-icon="search"
       single-line
+      v-model="search"
     ></v-text-field>
 
     <v-container fluid grid-list-sm class="ma-0 pa-0">
-      <v-layout row wrap justify-center>
-        <v-flex v-for="i in 6" :key="i" xs6>
+      <v-layout row wrap justify-center align-center>
+        <v-flex v-for="i in filteredVagas" :key="i" xs6>
           <vagas-card 
-            title="Agente Funerário"
-            :salario="850"
-            :vaga="1"
-            experiencia="6 meses"
-            local="Bairro do Recife"
+            v-if='i.nome!=""'
+            :title="i.nome"
+            :salario="i.salario"
+            :vaga="i.vagas"
+            :experiencia="i.experiencia"
+            :local="i.local"
+            :pcd='i.pcd'
           />
         </v-flex>
       </v-layout>
@@ -33,9 +36,22 @@
     },
     data () {
       return {
-
+        dados: [],
+        search:'',
       };
-    }  
+    },
+    created() {
+      fetch('http://10.98.251.18:3030/api').then(res=> res.json())
+      .then(res => this.dados = res);
+      // .then(res=> console.log(res));
+    },
+    computed:{
+      filteredVagas: function(){
+        return this.dados.filter((dado)=>{
+          return dado.nome.match(this.search.toUpperCase());
+        })
+      }
+    }
   }
 </script>
 
