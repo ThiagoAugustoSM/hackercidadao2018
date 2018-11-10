@@ -3,11 +3,13 @@ import './plugins/vuetify'
 import App from './App.vue'
 import * as VueGoogleMaps from "vue2-google-maps"
 import router from './router'
-import Vuetify from '../node_modules/vuetify'
+
+
 
 Vue.config.productionTip = false
 
 Vue.use(Vuetify)
+
 
 Vue.use(VueGoogleMaps, {
   load: {
