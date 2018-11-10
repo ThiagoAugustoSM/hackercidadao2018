@@ -123,15 +123,19 @@ export default {
   created: function(){ 
     if(router.currentRoute.name == 'Vagas'){
       this.bottomNav = 'vagas'
+      console.log('vagas')
     }
     else if(router.currentRoute.name == 'Mapas'){
        this.bottomNav = 'mapas' 
+       console.log('mps')
     }
     else if(router.currentRoute.name == 'Perfil'){
         this.bottomNav = 'perfil' 
+        console.log('perfil')
     }
     else if(router.currentRoute.name == 'Filtro'){
         this.bottomNav = 'filtro' 
+        console.log('filtro')
     }
     
   },
