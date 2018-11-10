@@ -9,7 +9,7 @@
     ></v-text-field>
 
     <v-container fluid grid-list-sm class="ma-0 pa-0">
-      <v-layout row wrap justify-center align-center>
+      <v-layout row wrap justify-center align-start fill-height>
         <v-flex v-for="i in filteredVagas" :key="i" xs6>
           <vagas-card 
             v-if='i.nome!=""'
@@ -41,7 +41,7 @@
       };
     },
     created() {
-      fetch('http://10.98.251.18:3030/api').then(res=> res.json())
+      fetch('http://10.98.251.11:3030/api').then(res=> res.json())
       .then(res => this.dados = res);
       // .then(res=> console.log(res));
     },

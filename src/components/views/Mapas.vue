@@ -26,6 +26,7 @@
           :position="m.position"
           @click="clickMarker(m)"
           :clickable="true"
+          icon=""
         ></gmap-marker>
       </gmap-map>
     <v-card class="pop-up">
@@ -34,13 +35,14 @@
               v-for="i in markers"
               :key="i" class="item"
               @click="clickMarker(i)"
+              v-model="carouselDado"
               >
 
             <v-flex style="margin:10px">
               <h5>{{i.nome}}</h5>
               <p style="margin-bottom:0;">Bairro: {{i.bairro}}</p>
               <p style="margin-bottom:0;">{{i.logradouro}}</p>
-              <p style="margin-bottom:0;">{{i.telefone}}}</p>
+              <p style="margin-bottom:0;">{{i.telefone}}</p>
             </v-flex>
           </v-carousel-item>
       </v-carousel>
@@ -52,7 +54,7 @@
 <style>
   .pop-up{
     position:absolute;
-    bottom:14.2em;
+    bottom:17em;
     left:1em;
     height:8em;
     width:20em;
@@ -146,6 +148,7 @@ export default {
       })
     },
     clickMarker(m) {
+      this.carouselDado = m
       this.center=m.position
       console.log(m)
     }

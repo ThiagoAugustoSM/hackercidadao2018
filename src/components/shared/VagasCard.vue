@@ -13,7 +13,7 @@
         </v-layout>
       </v-layout>
       <v-layout justify-center align-center>
-        <v-btn color="amber lighten-2" class="ma-0 mt-2" style="border-radius:2.5em; width: 90%; font-size:11px;">
+        <v-btn color="amber lighten-2" class="ma-0 mt-2" style="border-radius:2.5em; width: 90%; font-size:9px;">
           Tenho Interesse
         </v-btn>
       </v-layout>
