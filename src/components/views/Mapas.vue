@@ -40,7 +40,7 @@
               <h5>{{i.nome}}</h5>
               <p style="margin-bottom:0;">Bairro: {{i.bairro}}</p>
               <p style="margin-bottom:0;">{{i.logradouro}}</p>
-              <p style="margin-bottom:0;">{{i.telefone}}}</p>
+              <p style="margin-bottom:0;">{{i.telefone}}</p>
             </v-flex>
           </v-carousel-item>
       </v-carousel>
@@ -63,7 +63,7 @@
   .item{
     border-radius:0.8rem;
     background-color:white !important;
-    opacity:0.7;
+    
     color:#024FA1;;
     padding:0px;
   }

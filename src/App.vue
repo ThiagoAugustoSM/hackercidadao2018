@@ -21,7 +21,7 @@
           </div>
         </v-btn>
 
-        <v-btn  to="/curriculo" style=""  flat value="curriculo" >
+        <v-btn  to="/editconta" style=""  flat value="curriculo" >
           <div class="footerIcon">
             <i class="fas fa-user-tie"></i>
           </div>

@@ -1,8 +1,7 @@
 <template>
 <div>
-  <v-toolbar style="background-color:#024fa1"><h2 style="width:100%; text-align:center;color:white;font-weight:normal">Cadastro</h2></v-toolbar>
-  <v-container>
-    <v-container fluid grid-list-sm class="ma-0 pa-0">
+  <v-container fluid grid-list-sm class="ma-0 pa-0">
+    <v-toolbar style="background-color:#024fa1"><h2 style="width:100%; text-align:center;color:white;font-weight:normal">Editar Conta</h2></v-toolbar>
       <v-layout row wrap justify-center>
         <v-form ref="form" v-model="valid" style='width:90%;' flazy-validation>
           <v-layout row wrap>
@@ -16,13 +15,13 @@
             <v-flex xs12 class="px-0"><v-select :items="escolaridade" label="Escolaridade*" class="text-field" ></v-select></v-flex>
             <v-flex xs12><v-combobox v-model="select" multiple chips label='Areas de Interesse' :items='areas' class="text-field"></v-combobox></v-flex>
             <v-flex xs12><v-combobox v-model="select" multiple chips label='Possui alguma deficiência?' :items='deficiencia' class="text-field"></v-combobox></v-flex>
-            <v-flex xs12 justify-center style='margin-top:20px;display:flex;background-color:transparent;color:#024fa1;'><v-btn to="curriculo/" class="btn-prox" style="color:#024fa1;">Proxima Etapa</v-btn></v-flex>
+            <v-flex xs12 justify-center style='margin-top:20px;display:flex;background-color:transparent;color:#024fa1;'><v-btn to="/vagas" class="btn-prox" style="color:#024fa1;font-size:1.5em">Salvar aterações</v-btn></v-flex>
           </v-layout>
-        </v-form>
-        <v-btn to="/" @click="persist" style=" margin:10px;box-shadow:none;color:#024fa1;font-size:1.0em;background-color:transparent">Voltar</v-btn>
-      </v-layout>
-    </v-container>
-  </v-container>
+        </v-form> 
+        <v-btn to="/" @click="persist" style="margin:10px; margin-bottom:30px; box-shadow:none;color:#024fa1;font-size:1.0em;background-color:transparent">Sair</v-btn>
+        <v-btn to="/editcurriculo" @click="persist" style="margin:10px; margin-bottom:30px;box-shadow:none;color:#024fa1;font-size:1.0em;background-color:transparent">Editar currículo</v-btn>
+      </v-layout style="margin-bottom:20px">
+  </v-container style="padding-bottom:20px">
 </div>
 </template>
 

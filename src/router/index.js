@@ -6,7 +6,8 @@ import Vagas from '@/components/views/Vagas.vue'
 import Cadastro from '@/components/views/Cadastro.vue'
 import Login from '@/components/views/Login.vue'
 import Curriculo from '@/components/views/Curriculo.vue'
-
+import EditarConta from '@/components/views/EditarConta.vue'
+import EditarCurriculo from '@/components/views/EditarCurriculo.vue'
 
 Vue.use(Router)
 export default new Router({
@@ -35,6 +36,16 @@ export default new Router({
       path: '/',
       name: 'Login',
       component:Login
+    },
+    {
+      path: '/editcurriculo',
+      name: 'EditarCurriculo',
+      component: EditarCurriculo
+    },
+    {
+      path: '/editconta',
+      name: 'EditarConta',
+      component: EditarConta
     },
     {
       path: '/curriculo',
