@@ -1,68 +1,7 @@
 <template>
   <v-app id="inspire">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      app
-    >
-      <v-list dense>
-        <!-- <router-link to="Vagas"> -->
-        <v-list-tile @click="teste" to="HelloWorld" style="text-decoration: none;">
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <!-- </router-link> -->
-        <v-list-tile @click="teste">
-          <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Contact</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile @click="teste" to="Vagas">
-          <v-list-tile-action>
-            <v-icon>person_add</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Vagas</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile @click="teste" to="Mapas">
-          <v-list-tile-action>
-            <v-icon>book</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Qualifique-se</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile @click="teste" to="Cadastro">
-          <v-list-tile-action>
-            <v-icon>person_add</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Cadastro</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile @click="teste" to="Login">
-          <v-list-tile-action>
-            <v-icon>book</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Login</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar color="indigo" dark fixed app>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Chega no Trabalho</v-toolbar-title>
-    </v-toolbar>
+    
 
     <v-content>
       <router-view></router-view>
@@ -168,5 +107,6 @@ export default {
     text-decoration:none;
     color:#024FA1;
   }
+  
 
 </style>

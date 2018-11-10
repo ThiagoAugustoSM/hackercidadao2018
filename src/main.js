@@ -3,6 +3,7 @@ import './plugins/vuetify'
 import App from './App.vue'
 import * as VueGoogleMaps from "vue2-google-maps"
 import router from './router'
+import './stylus/main.styl'
 
 import VueJsonp from 'vue-jsonp'
 Vue.use(VueJsonp)
