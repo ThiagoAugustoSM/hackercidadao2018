@@ -1,6 +1,6 @@
 <template>
   <div>
-
+<!--
     <div>
       <h2>Search and add a pin</h2>
       <label>
@@ -11,13 +11,13 @@
       </label>
       <br/>
 
-    </div>
+    </div>-->
     <br>
     <div>
       <gmap-map
         :center="center"
         :zoom="12"
-        style="width:100%;  height: 200px;"
+        style="width:100%;  height:600px;position:relative;bottom:20px"
       >
         <gmap-marker
           :key="index"
@@ -27,14 +27,47 @@
           :clickable="true"
         ></gmap-marker>
       </gmap-map>
-    <v-card>
-      <h2>Teste123123</h2>
-      <h2>Teste123123</h2>
+    <v-card class="pop-up">
+      <v-carousel touch cycle hide-controls hide-delimiters next-icon prev-icon height='8em' style="background-color:transparent;border:none;box-shaddow:none;">
+        <v-carousel-item height='10em'
+              v-for="i in markers"
+              :key="i" class="item"
+              @click="clickMarker(i)"
+              >
+
+            <v-flex style="margin:10px">
+              <h5>{{i.nome}}</h5>
+              <p style="margin-bottom:0;">Bairro: {{i.bairro}}</p>
+              <p style="margin-bottom:0;">{{i.logradouro}}</p>
+              <p style="margin-bottom:0;">{{i.telefone}}}</p>
+            </v-flex>
+          </v-carousel-item>
+      </v-carousel>
     </v-card>
     </div>
   </div>
   
 </template>
+<style>
+  .pop-up{
+    position:absolute;
+    bottom:5em;
+    left:1em;
+    height:8em;
+    width:20em;
+    z-index:15;
+    background-color:transparent !important;
+    border:none !important;
+    border-radius:0.8rem;
+  }
+  .item{
+    border-radius:0.8rem;
+    background-color:white !important;
+    opacity:0.7;
+    color:#024FA1;;
+    padding:0px;
+  }
+</style>
 
 <script>
 export default {
@@ -46,7 +79,7 @@ export default {
       center: { lat: -8.049895, lng:-34.8851158 },
       markers: [{position:{lat:-8.06093, lng: -34.87242}}], //{position:{lat:-8.06293	,lng:-34.88407}}
       places: [],
-      currentPlace: null
+      currentPlace: null,
     };
   },
 
@@ -100,7 +133,7 @@ export default {
         // Failed.
       })
     },
-    clickMarker (m) {
+    clickMarker(m) {
       this.center=m.position
       console.log(m)
     }
