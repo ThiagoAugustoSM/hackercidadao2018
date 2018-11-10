@@ -11,11 +11,12 @@
           <h4 class="body-1 text-xs-center ma-0 mr-2 text-capitalize">{{vaga}}</h4>
           <i v-if="pcd" class="fas fa-wheelchair pt-1"></i>
         </v-layout>
-      </v-layout>
-      <v-layout justify-center align-center>
-        <v-btn color="amber lighten-2" class="ma-0 mt-2" style="border-radius:2.5em; width: 90%; font-size:9px;">
-          Tenho Interesse
-        </v-btn>
+        <v-layout justify-center align-center class="button-bot">
+          <v-btn  color="amber lighten-2" class="ma-0 mt-2" style="border-radius:2.5em; width: 90%; font-size:9px;">
+            Tenho Interesse
+          </v-btn>
+          
+        </v-layout>
       </v-layout>
     </v-container>
   </v-card>
@@ -41,5 +42,4 @@ export default {
 
 
 <style>
-
 </style>

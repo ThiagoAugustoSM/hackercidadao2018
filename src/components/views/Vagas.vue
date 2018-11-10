@@ -46,7 +46,7 @@
       };
     },
     created() {
-      fetch('http://10.98.251.11:3030/api').then(res=> res.json())
+      fetch('http://10.98.251.18:3030/api').then(res=> res.json())
       .then(res => this.dados = res);
       // .then(res=> console.log(res));
     },
