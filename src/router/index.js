@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/views/HelloWorld.vue'
 import Mapas from '@/components/views/Mapas.vue'
+import Vagas from '@/components/views/Vagas.vue'
 
 
 Vue.use(Router)

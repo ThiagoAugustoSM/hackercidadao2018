@@ -9,6 +9,7 @@
     </author>
     <content src="http://10.98.251.11:8080" />
     <allow-navigation href="http://10.98.251.11:8080" />
+    <allow-navigation href="http://10.98.251.11:8080" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
