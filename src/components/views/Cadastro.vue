@@ -5,7 +5,7 @@
       <v-layout row wrap justify-center>
         <v-form ref="form" v-model="valid" style='width:90%;' flazy-validation>
           <v-layout row wrap>
-            <v-text-field  v-model="name" label="Nome Completo*" class="text-field" required></v-text-field>
+            <v-text-field  v-model="nome" label="Nome Completo*" class="text-field" required></v-text-field>
             <v-flex xs7 class="px-0" style="padding-right: 15px !important"><v-text-field  v-model="cpf" label="CPF*" class="text-field" required></v-text-field></v-flex>
             <v-flex xs5 class="px-0"><v-select :items="genero" label="Gênero*" class="text-field" required></v-select></v-flex>
             <v-flex xs5 class="px-0" style="padding-right: 15px !important"><v-text-field label="Celular" class="text-field" ></v-text-field></v-flex>
@@ -18,7 +18,7 @@
             <v-flex xs12 justify-center style='margin-top:20px;display:flex'><v-btn class="btn-prox">Próxima Etapa</v-btn></v-flex>
           </v-layout>
         </v-form>
-        <v-btn style=" margin:10px;box-shadow:none;color:#024fa1;font-size:1.1em">Voltar</v-btn>
+        <v-btn @click="persist" style=" margin:10px;box-shadow:none;color:#024fa1;font-size:1.1em">Voltar</v-btn>
       </v-layout>
     </v-container>
   </v-container>
@@ -33,10 +33,21 @@
         bairros:['Casa Amarela','Ibura'],
         escolaridade:['Não Frequentou a Escola','Fundamental Incompleto', 'Fundamental Completo','Ensino Médio Completo', 'Ensino Médio Incompleto','Tecnico Incompleto','Tecnico Completo','Esnsino Superior Incompleto','Ensino Superior Completo' ],
         areas:['Agronomia', 'Engenharia'],
-        deficiencia:['Não', 'Locomotiva', 'Auditiva', 'Cognitiva'],     
+        deficiencia:['Não', 'Locomotiva', 'Auditiva', 'Cognitiva'],
+        nome : null,     
         }
+      },
+    mounted() {
+      if (localStorage.nome) {
+        this.nome = localStorage.nome;
+      }
+    },
+    methods: {
+      persist() {
+        localStorage.nome = this.nome;
       }
     }
+  }
 </script>
 
 

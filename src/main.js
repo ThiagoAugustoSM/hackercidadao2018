@@ -4,7 +4,8 @@ import App from './App.vue'
 import * as VueGoogleMaps from "vue2-google-maps"
 import router from './router'
 
-
+import VueJsonp from 'vue-jsonp'
+Vue.use(VueJsonp)
 
 Vue.config.productionTip = false
 
