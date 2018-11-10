@@ -29,6 +29,7 @@ export default new Router({
       name: 'Cadastro',
       component: Cadastro
     },
+    {
       path: '/login',
       name: 'Login',
       component:Login
