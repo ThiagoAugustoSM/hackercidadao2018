@@ -1,24 +1,12 @@
 <template>
   <div style="position:fixed; width:100%">
     <v-toolbar style="background-color:#024fa1"><h2 style="width:100%; text-align:center;color:white;font-weight:normal">Locais de Qualificação</h2></v-toolbar>
-<!--
-    <div>
-      <h2>Search and add a pin</h2>
-      <label>
-        <gmap-autocomplete
-          @place_changed="setPlace">
-        </gmap-autocomplete>
-        <button @click="addMarker">Add</button>
-      </label>
-      <br/>
-
-    </div>-->
     <br>
     <div>
       <gmap-map
         :center="center"
         :zoom="12"
-        style="width:100%;  height:550px;position:relative;bottom:22px"
+        style="width:100%;  height:530px;position:relative;bottom:22px"
       >
         <gmap-marker
           :key="index"
@@ -53,7 +41,7 @@
 <style>
   .pop-up{
     position:absolute;
-    bottom:17em;
+    bottom:12em;
     left:1em;
     height:8em;
     width:20em;
