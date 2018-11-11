@@ -14,15 +14,9 @@
             <v-flex xs12 class="px-0"><v-autocomplete :items="bairros" label="Bairro*" class="text-field" required></v-autocomplete></v-flex>
             <v-flex xs12 class="px-0"><v-text-field  v-model="email" label="Email" class="text-field" required></v-text-field></v-flex>
             <v-flex xs12 class="px-0"><v-select :items="escolaridade" label="Escolaridade*" class="text-field" ></v-select></v-flex>
-<<<<<<< HEAD
-            <v-flex xs12><v-combobox v-model="areas" multiple chips label='Areas de Interesse' :items='areas' class="text-field"></v-combobox></v-flex>
-            <v-flex xs12><v-combobox v-model="pcd" multiple chips label='Possui alguma deficiência?' :items='deficiencia' class="text-field"></v-combobox></v-flex>
-            <v-flex xs12 justify-center style='margin-top:20px;display:flex;background-color:transparent;color:#024fa1;'><v-btn to="vagas" class="btn-prox" style="color:#024fa1;">Cadastrar</v-btn></v-flex>
-=======
             <v-flex xs12><v-combobox v-model="select" multiple chips label='Areas de Interesse' :items='areas' class="text-field"></v-combobox></v-flex>
             <v-flex xs12><v-combobox v-model="select" multiple chips label='Possui alguma deficiência?' :items='deficiencia' class="text-field"></v-combobox></v-flex>
             <v-flex xs12 justify-center style='margin-top:20px;display:flex;background-color:transparent;color:#024fa1;'><v-btn to="curriculo/" class="btn-prox" style="color:#024fa1;">Proxima Etapa</v-btn></v-flex>
->>>>>>> ea3a47539a2bb98eeb9f3836feee6378272420aa
           </v-layout>
         </v-form>
         <v-btn to="/" @click="persist" style=" margin:10px;box-shadow:none;color:#024fa1;font-size:1.0em;background-color:transparent">Voltar</v-btn>
@@ -43,80 +37,13 @@
         areas:['Agronomia', 'Engenharia'],
         deficiencia:['Não', 'Locomotiva', 'Auditiva', 'Cognitiva'],
         nome : '',
-        areas : [],
-        pcd: [],   
+         
         }
       },
     mounted() {
       // if (localStorage.nome) {
       //   this.nome = localStorage.nome;
       // }
-    },
-    computed:{
-      genero:{
-        get () {
-          return this.$store.state.obj.genero
-        },
-        set (value) {
-          this.$store.commit('genero2', value)
-        }
-      },
-      cpf:{
-        get () {
-          return this.$store.state.obj.cpf
-        },
-        set (value) {
-          this.$store.commit('cpf2', value)
-        }
-      },
-      bairros:{
-        get () {
-          return this.$store.state.obj.bairros
-        },
-        set (value) {
-          this.$store.commit('bairros2', value)
-        }
-      },
-      escolaridade:{
-        get () {
-          return this.$store.state.obj.escolaridade
-        },
-        set (value) {
-          this.$store.commit('escolaridade2', value)
-        }
-      },
-      areas:{
-        get () {
-          return this.$store.state.obj.areas
-        },
-        set (value) {
-          this.$store.commit('areas2', value)
-        }
-      },
-      deficiencia:{
-        get () {
-          return this.$store.state.obj.deficiencia
-        },
-        set (value) {
-          this.$store.commit('deficiencia2', value)
-        }
-      },
-      nome:{
-        get () {
-          return this.$store.state.obj.nome
-        },
-        set (value) {
-          this.$store.commit('nome2', value)
-        }
-      },
-      pcd:{
-        get () {
-          return this.$store.state.obj.pcd
-        },
-        set (value) {
-          this.$store.commit('pcd2', value)
-        }
-      },
     },
     methods: {
       persist() {
