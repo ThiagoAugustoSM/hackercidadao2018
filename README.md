@@ -1,5 +1,19 @@
 # recidadao
 
+## Requirements
+
+Cordova installed
+
+```
+npm install -g cordova
+```
+
+If cordova doesn't work
+
+```
+cd src-cordova && mkdir www/
+```
+
 ## Project setup
 ```
 npm install

@@ -38,19 +38,22 @@ app.listen(3030, () => {
     console.log('Example app listening on port 3000!');
 });
 
-setInterval(function(){
-    console.log("legal");
-    var file = fs.createWriteStream("public/emprego.xlsx");
-    request('http://www2.recife.pe.gov.br/taxonomy/term/8430/', function(err, resp, html) {
-            if (!err){
-              const $ = cheerio.load(html);
-              var site = $('strong a').attr('href');
-              console.log($('strong a').attr('href'));
-                http.get(site, function(response) {
-                    // console.log(response)
-                    response.pipe(file);
-                }); 
-          }
-    });
-}, 10 * 1000);
+// setInterval(function(){
+//     console.log("legal");
+//     var file = fs.createWriteStream("public/emprego.xlsx");
+//     request('http://www2.recife.pe.gov.br/taxonomy/term/8430/', function(err, resp, html) {
+//             if (!err){
+//               console.log(html)  
+//               const $ = cheerio.load(html);
+//               var site = $('strong a').attr('href');
+//               console.log($('strong a').attr('href'));
+//                 http.get(site, function(response) {
+//                     // console.log(response)
+//                     response.pipe(file);
+//                 }); 
+//           }else{
+//               console.log(resp);
+//           }
+//     });
+// }, 3 * 1000);
 

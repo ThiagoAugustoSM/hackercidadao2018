@@ -14,6 +14,7 @@
     "cordova-serve-ios": "vue-cli-service cordova-serve-ios"
   },
   "dependencies": {
+    "core-js": "^2.5.7",
     "vue": "^2.5.17",
     "vue-jsonp": "^0.1.8",
     "vue-router": "^3.0.1",
