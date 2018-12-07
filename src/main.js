@@ -11,10 +11,10 @@ Vue.use(VueJsonp)
 Vue.config.productionTip = false
 
 import firebase from 'firebase';
-firebase.initializeApp({
+export const firebaseApp = firebase.initializeApp({
   projectId: 'faciliti-c6f33',
   databaseURL: 'https://faciliti-c6f33.firebaseio.com',
-})
+});
 
 Vue.use(VueGoogleMaps, {
   load: {

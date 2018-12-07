@@ -7,7 +7,7 @@
       <router-view></router-view>
     </v-content>
     
-    <v-footer  v-if="!($route.name == 'Login' || $route.name == 'Cadastro')" fixed height="auto"  app>
+    <v-footer  v-if="!($route.name == 'Login' || $route.name == 'Cadastro' || $route.name == 'Apresentacao')" fixed height="auto"  app>
       <v-bottom-nav  style="margin: auto;" row wrap :active.sync="bottomNav" :value="true" absolute>
         <v-btn  to="/vagas" style="height:100%; padding:auto;"  flat value="vagas" >
           <div class="footerIcon">
@@ -35,6 +35,19 @@
 <script>
 /* eslint-disable */
 import router from './router/index.js';
+/*
+import {firebaseApp} from './main.js';
+const messaging = firebase.messaging();
+messaging.usePublicVapidKey('BEXEaHALjNHXUKhplPwHL7EYYIKVC0Wu_FLKUeZmq2n_HlhNyutWGggr0VPg0qbjyMRY-oB6usVYyVmX6e_bp_I');
+messaging.requestPermission().then(function() {
+  console.log('Notification permission granted.');
+  // TODO(developer): Retrieve an Instance ID token for use with FCM.
+  // ...
+}).catch(function(err) {
+  console.log('Unable to get permission to notify.', err);
+});
+*/
+
 export default {
   name: 'App',
   // components: {
