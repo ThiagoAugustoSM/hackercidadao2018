@@ -1,32 +1,127 @@
 <template>
-<div>
-  <v-toolbar style="background-color:#024fa1"><h2 style="width:100%; text-align:center;color:white;font-weight:normal">Cadastro</h2></v-toolbar>
-  <v-container>
-    <v-container fluid grid-list-sm class="ma-0 pa-0">
-      <v-layout row wrap justify-center>
-        <v-form ref="form" v-model="valid" style='width:90%;' flazy-validation>
-          <v-layout row wrap>
-            <v-text-field  v-model="nome" label="Nome Completo*" class="text-field" required></v-text-field>
-            <v-flex xs7 class="px-0" style="padding-right: 15px !important"><v-text-field  v-model="cpf" label="CPF*" class="text-field" required></v-text-field></v-flex>
-            <v-flex xs5 class="px-0"><v-select :items="genero" label="Gênero*" class="text-field" required></v-select></v-flex>
-            <v-flex xs5 class="px-0" style="padding-right: 15px !important"><v-text-field label="Celular" class="text-field" ></v-text-field></v-flex>
-            <v-flex xs7><v-text-field  v-model="name" label="Data de Nascimento*" mask='date' class="text-field" required></v-text-field></v-flex>
-            <v-flex xs12 class="px-0"><v-autocomplete :items="bairros" label="Bairro*" class="text-field" required></v-autocomplete></v-flex>
-            <v-flex xs12 class="px-0"><v-text-field  v-model="email" label="Email" class="text-field" required></v-text-field></v-flex>
-            <v-flex xs12 class="px-0"><v-select :items="escolaridade" label="Escolaridade*" class="text-field" ></v-select></v-flex>
-            <v-flex xs12><v-combobox v-model="select" multiple chips label='Areas de Interesse' :items='areas' class="text-field"></v-combobox></v-flex>
-            <v-flex xs12><v-combobox v-model="select" multiple chips label='Possui alguma deficiência?' :items='deficiencia' class="text-field"></v-combobox></v-flex>
-            <v-flex xs12 justify-center style='margin-top:20px;display:flex;background-color:transparent;color:#024fa1;'><v-btn to="curriculo/" class="btn-prox" style="color:#024fa1;">Proxima Etapa</v-btn></v-flex>
-          </v-layout>
-        </v-form>
-        <v-btn to="/" @click="persist" style=" margin:10px;box-shadow:none;color:#024fa1;font-size:1.0em;background-color:transparent">Voltar</v-btn>
-      </v-layout>
+  <div>
+    <v-toolbar style="background-color:#024fa1">
+      <h2 style="width:100%; text-align:center;color:white;font-weight:normal">Fazer cadastro</h2>
+    </v-toolbar>
+    <v-container>
+      <v-container fluid grid-list-sm class="ma-0 pa-0">
+        <v-layout row wrap justify-center>
+          <v-form ref="form" v-model="valid" style='width:90%;' flazy-validation>
+            <v-layout row wrap>
+              <v-text-field  
+                v-model="nome" 
+                label="Nome Completo*" 
+                class="text-field" 
+                required
+              />
+              <v-flex xs7 class="px-0" style="padding-right: 15px !important">
+                <v-text-field  
+                  v-model="cpf" 
+                  label="CPF*" 
+                  class="text-field" 
+                  required
+                />
+              </v-flex>
+              <v-flex xs5 class="px-0">
+                <v-select 
+                  :items="genero"
+                  v-model="generoEscolhido"
+                  label="Gênero*" 
+                  class="text-field" 
+                  required
+                />
+              </v-flex>
+              <v-flex xs5 class="px-0" style="padding-right: 15px !important">
+                <v-text-field 
+                  label="Celular" 
+                  class="text-field" 
+                />
+              </v-flex>
+              <v-flex xs7>
+                <v-text-field  
+                  v-model="dataNascimento" 
+                  label="Data de Nascimento*" 
+                  mask='date' 
+                  class="text-field" 
+                  required
+                />
+              </v-flex>
+              <v-flex xs12 class="px-0">
+                <v-autocomplete 
+                  :items="bairros" 
+                  label="Bairro*" 
+                  class="text-field" 
+                  required/>
+              </v-flex>
+              <v-flex xs12 class="px-0">
+                <v-text-field  
+                  v-model="email" 
+                  label="Email" 
+                  class="text-field" 
+                  required
+                />
+              </v-flex>
+              <v-flex xs12 class="px-0">
+                <v-text-field 
+                  v-model="senha" 
+                  label='Senha'
+                  class="text-field"
+                /> 
+              </v-flex>
+              <v-flex xs12 class="px-0">
+                <v-select 
+                  :items="escolaridade" 
+                  v-model="escolaridadeEscolhida"
+                  label="Escolaridade*" 
+                  class="text-field" 
+                />
+              </v-flex>
+              
+              <v-flex xs12>
+                <v-combobox 
+                  v-model="areasEscolhidas"
+                  multiple 
+                  chips 
+                  label='Áreas de Preferência' 
+                  :items='areas' 
+                  class="text-field"
+                />
+              </v-flex>
+              <v-flex xs12>
+                <v-combobox 
+                  v-model="deficienciasEscolhidas" 
+                  multiple 
+                  chips 
+                  label='Possui alguma deficiência?' 
+                  :items="deficiencia" 
+                  class="text-field"
+                />
+              </v-flex>
+              <v-flex xs12 justify-center style='margin-top:20px;display:flex;background-color:transparent;color:#024fa1;box-shadow:none;'>
+                <v-btn
+                  @click="singUp()"
+                  class="btn-prox" 
+                  style="color:#024fa1;"
+                >Proxima etapa</v-btn>
+              </v-flex>
+            </v-layout>
+          </v-form>
+          <v-btn 
+            to="/" 
+            @click="persist" 
+            style=" margin:10px;box-shadow:none;color:#024fa1;font-size:1.0em;background-color:transparent"
+          >Voltar</v-btn>
+        </v-layout>
+      </v-container>
     </v-container>
-  </v-container>
-</div>
+  </div>
 </template>
 
 <script>
+/* eslint-disable */
+import {firebaseApp} from '../../main'
+import {db} from '../../main'
+
   export default {
     data () {
       return {
@@ -35,7 +130,18 @@
         escolaridade:['Não Frequentou a Escola','Fundamental Incompleto', 'Fundamental Completo','Ensino Médio Completo', 'Ensino Médio Incompleto','Tecnico Incompleto','Tecnico Completo','Esnsino Superior Incompleto','Ensino Superior Completo' ],
         areas:['Agronomia', 'Engenharia'],
         deficiencia:['Não', 'Locomotiva', 'Auditiva', 'Cognitiva'],
-        nome : '',     
+        nome : '',
+        cpf: '',
+        celular: '',
+        dataNascimento: '',
+        bairro: '',
+        generoEscolhido: '',
+        escolaridadeEscolhida: '',
+        areasEscolhidas: [],
+        deficienciasEscolhidas: [],
+        email: '',
+        senha: '',
+        valid: null,
         }
       },
     mounted() {
@@ -43,9 +149,35 @@
       //   this.nome = localStorage.nome;
       // }
     },
+    created (){
+      console.log(firebaseApp.auth().currentUser)
+    },
     methods: {
       persist() {
         localStorage.nome = this.nome;
+      },
+      singUp () {
+        firebaseApp.auth().createUserWithEmailAndPassword(this.email, this.senha).then(
+          (user) => {
+            console.log('A conta foi criada + ', user);
+            let uid = firebaseApp.auth().currentUser.uid;
+            db.collection('users').doc(uid).set({
+              nome: this.nome,
+              cpf: this.cpf,
+              celular: this.celular,
+              dataNascimento: this.dataNascimento,
+              bairro: this.bairro,
+              genero: this.generoEscolhido,
+              escolaridade: this.escolaridadeEscolhida,
+              areas: this.areasEscolhidas,
+              deficiencia: this.deficienciasEscolhidas,
+              email: this.email,
+              uid: uid
+            })
+          }).catch( err => {
+            console.log('Erro: ' + err.message);
+          }
+        )
       }
     }
   }
@@ -61,7 +193,7 @@
     padding:2px;
     border-radius:2.5rem;
     background-color:white;
-    font-size:1.7em;
+    font-size:1.3em;
     font-weight:bolder;
     border:1px solid #024FA1;
     margin:auto;

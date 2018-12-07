@@ -20,6 +20,9 @@ yarn-error.log*
 *.sln
 *.sw*
 
+# Firebase
+firebaseConfig.json
+
 # Cordova
 /src-cordova/www
 /src-cordova/platforms

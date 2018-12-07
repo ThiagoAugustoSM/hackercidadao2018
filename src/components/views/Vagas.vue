@@ -50,6 +50,9 @@
 </template>
 
 <script>
+  /* eslint-disable */
+  import {firebaseApp} from '../../main'
+  import {db} from '../../main'
   import VagasCard from '../shared/VagasCard';
 
   export default {
@@ -63,9 +66,11 @@
       };
     },
     created() {
-      fetch('http://localhost:3030/api').then(res=> res.json())
-      .then(res => this.dados = res);
-      // .then(res=> console.log(res));
+      console.log()
+      db.collection("jobs").doc(new Date().toISOString().slice(0,10))
+        .onSnapshot((doc) => {
+          this.dados = doc.data().vagasEmprego;
+        });
     },
     computed:{
       filteredVagas: function(){

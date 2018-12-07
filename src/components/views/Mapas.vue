@@ -61,6 +61,7 @@
 </style>
 
 <script>
+/* eslint-disable */
 export default {
   name: "GoogleMap",
   data() {
@@ -73,7 +74,6 @@ export default {
       currentPlace: null,
     };
   },
-
   mounted() {
     this.geolocate();
     this.getMarkers();

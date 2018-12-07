@@ -11,10 +11,11 @@ Vue.use(VueJsonp)
 Vue.config.productionTip = false
 
 import firebase from 'firebase';
-firebase.initializeApp({
-  projectId: 'faciliti-c6f33',
-  databaseURL: 'https://faciliti-c6f33.firebaseio.com',
-})
+import firebaseConfig from '../firebaseConfig.json';
+
+export const firebaseApp = firebase.initializeApp(firebaseConfig)
+export const db = firebase.firestore();
+db.settings({timestampsInSnapshots: true});
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -23,10 +24,16 @@ Vue.use(VueGoogleMaps, {
   }
 });
 
-new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#app')
+let app = '';
+
+firebaseApp.auth().onAuthStateChanged(() => {
+  if(!app){
+    app = new Vue({
+      router,
+      render: h => h(App),
+    }).$mount('#app')
+  }
+})
 
 
 
