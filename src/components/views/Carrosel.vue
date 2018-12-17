@@ -1,15 +1,15 @@
 <template>
-    <v-container fluid  style="display:flex; flex-direction: column; justify-content:space-around; align-items:center; height: 100vh;" class="ma-0 pa-0 fundoTela bodyLogin">
+    <v-container fluid  style="display:flex; flex-direction: column; justify-content:flex-start; align-items:center; height: 100vh;" class="ma-0 pa-0 fundoTela bodyLogin">
         
-        <div style="height:20%; width:auto;">
+        <div style="height:20%; width:50%; display:flex; flex-direction: column; justify-content:center; align-items:center; margin-bottom:20%; margin-top:10%;">
             <p style="height:20%;width:100%;text-align:center;margin-bottom:0;">Bem vindo ao</p>
             <img src='../../assets/carousel_logo.jpeg' style="height: 80%; width:auto;"/>
         </div>
 
-        <v-carousel hide-controls class="carousel_apresentacao"> 
-            <v-carousel-item  style="background-color:white; border-radius:2.5rem; height:100%;" v-for="(item,i) in items" :key="i"  :src="item.src">
-               <div style="height: 100%; display:flex; flex-direction:column; justify-content:flex-start; margin-top:10%;">
-                <svg v-if="(i == 3)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <v-carousel :cycle="cycle"  hide-controls hide-delimiters class="carousel_apresentacao"> 
+            <v-carousel-item style="background-color:white; border-radius:2.5rem; height:100%;" v-for="(item,i) in items" :key="i"  :src="item.src">
+               <v-touch  v-on:swipeleft="changeCurrent(i, 'left')" v-on:swiperight="changeCurrent(i, 'right')" style="height: 100%; display:flex; flex-direction:column; justify-content:flex-start; margin-top:10%;">
+                <svg v-if="(i == 3)"   version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" fill="#024FA1" height="20%" width="auto">
                         <g>
                             <g>
@@ -48,8 +48,8 @@
                             </g>
                         </g>
                     </svg>
-                    <svg v-if="(i == 0)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" fill="#024FA1" height="20%" width="auto" >
+                    <svg v-if="(i == 0)"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" fill="#024FA1" height="20%" width="auto" >
                         <g>
                             <g>
                                 <path d="M453.645,127.105c-12.975-15.654-32.252-24.71-52.584-24.704c-11.994-0.009-23.774,3.172-34.133,9.217v-94.55
@@ -81,7 +81,7 @@
                             </g>
                         </g>
                     </svg>
-                    <svg  v-if="(i == 1)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg  v-if="(i == 2)"   version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512.013 512.013" style="enable-background:new 0 0 512.013 512.013;" xml:space="preserve" fill="#024FA1" height="20%" width="auto">
                         <g>
                             <g>
@@ -119,7 +119,7 @@
                             </g>
                         </g>
                     </svg>
-                    <svg v-if="(i == 2)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg v-if="(i == 1)"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" fill="#024FA1" height="20%" width="auto">
                         <g>
                             <g>
@@ -184,10 +184,17 @@
                             </g>
                         </g>
                         </svg>
-                    <p style="text-align:center; margin-top: 10%;"> {{item.content}}</p>
-                </div>
+                    <p style="text-align:center; margin-top: 10%; margin-left:auto; margin-right: auto; width:70%;"> {{item.content}}</p>
+                </v-touch>
             </v-carousel-item>
         </v-carousel>
+        <div style="width:80%; display:flex; justify-content: center; align-items: center; margin-top:3%;">
+            <div v-bind:class="{ chose_delimiter: currentI1 }" class="delimiter_circle"></div>
+            <div v-bind:class="{ chose_delimiter: currentI2 }" class="delimiter_circle"></div>
+            <div v-bind:class="{ chose_delimiter: currentI3 }" class="delimiter_circle"></div>
+            <div v-bind:class="{ chose_delimiter: currentI4 }" class="delimiter_circle"></div>
+        </div>
+        <v-btn to="/login" v-if="(currentI4 === 1)" style="border-radius: 2.5em; margin-top: 3%; height:25px; text-transform:capitalize; background-color:#FDE019; color:#024FA1; font-weight:bold;"> continuar </v-btn>
 
     </v-container>
 </template>
@@ -216,9 +223,47 @@
                 src: '../../assets/faciliti.png',
                 content: 'Achou algo interessante? Clique em “Tenho Interesse”. Vamos levar sua solicitação até a Agência de Empregos do Recife e te avisamos se você for compatível com a vaga.'
               }
-          ]
+          ],
+          currentI1: 1,
+          currentI2: 0,
+          currentI3: 0,
+          currentI4: 0,
+          cycle: false,
+          previous: "left"
+
       };
     },
+    methods:{
+        changeCurrent(current, mode){
+            
+            
+            if(current === 1){
+                this.currentI1 = 0;
+                this.currentI3 = 0;
+                this.currentI4 = 0;
+                this.currentI2 = 1;
+            }
+            else if(current === 0){
+                this.currentI2 = 0;
+                this.currentI3 = 0;
+                this.currentI4 = 0;
+                this.currentI1 = 1;
+            }
+            else if(current === 3){
+                this.currentI1 = 0;
+                this.currentI2 = 0;
+                this.currentI3 = 0;
+                this.currentI4 = 1;
+            }
+            else if(current === 2){
+                this.currentI1 = 0;
+                this.currentI2 = 0;
+                this.currentI4 = 0;
+                this.currentI3 = 1;
+            }
+            console.log("currentI1 : " + this.currentI1 + " currentI2: " + this.currentI2 + " currentI3: " + this.currentI3 + " currentI4: " + this.currentI4 + " " + mode + " " + current);
+        }
+    }
 
   }
   
@@ -259,8 +304,20 @@
     }
     .carousel_apresentacao{
         
-        height: 50% !important;
+        height: 45% !important;
         width: 80%;
+    }
+    .delimiter_circle{
+        height: 15px;
+        border-radius:100%;
+        border: 1.5px solid #FDE019;
+        width:15px;
+        margin-right:5px;
+        margin-left: 5px;
+        background-color:transparent;
+    }
+    .chose_delimiter{
+        background-color: #FDE019 !important;
     }
 
     

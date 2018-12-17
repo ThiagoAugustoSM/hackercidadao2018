@@ -9,7 +9,7 @@
                 <input type="text" placeholder="CPF" style="margin-bottom: 5%;" class="loginButton" />
                 <input type="password" placeholder="Senha" class="loginButton"/>
                 
-                <v-btn to="/vagas" round color="#FDE019" style="color:#024FA1;  margin-top: 10%; width:27.5%; height:3em">entrar</v-btn>
+                <v-btn to="/vagas" round color="#FDE019" style="color:#024FA1;  margin-top: 10%; width:27.5%; height:3em;">entrar</v-btn>
             </v-flex>
             <v-flex xs2 style="display:flex; flex-direction:column; justify-content:center; align-items: center;margin-top:1em">
                 <router-link to='cadastro' style="text-decoration: none;">
