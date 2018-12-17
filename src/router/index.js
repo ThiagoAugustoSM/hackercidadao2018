@@ -9,17 +9,23 @@ import Login from '@/components/views/Login.vue'
 import Curriculo from '@/components/views/Curriculo.vue'
 import EditarConta from '@/components/views/EditarConta.vue'
 import EditarCurriculo from '@/components/views/EditarCurriculo.vue'
+import Apresentacao from '@/components/views/Carrosel.vue'
 
 Vue.use(Router)
 const router =  new Router({
   routes: [
     {
       path: '*',
-      redirect: '/login',
+      redirect: '/Apresentacao',
+    },
+    {
+      path: '/',
+      name: 'Apresentacao',
+      component: Apresentacao
     },
     {
       path: '',
-      redirect: '/login',
+      redirect: '/Apresentacao',
     },
     {
       path: '/login',
