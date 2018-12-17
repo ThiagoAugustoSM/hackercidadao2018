@@ -1,0 +1,11 @@
+{
+  "android": {
+      "release": {
+          "keystore": "/home/thiago/development/hackercidadao2018/my-release-key.keystore",
+          "storePassword": "",
+          "alias": "mykey2",
+          "password" : "123456",
+          "keystoreType": ""
+      }
+  }
+}
