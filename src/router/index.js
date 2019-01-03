@@ -12,6 +12,9 @@ import EditarCurriculo from '@/components/views/EditarCurriculo.vue'
 import Apresentacao from '@/components/views/Carrosel.vue'
 
 Vue.use(Router)
+
+/* eslint-disable */
+
 const router =  new Router({
   routes: [
     {
@@ -77,7 +80,10 @@ const router =  new Router({
     {
       path: '/curriculo',
       name: 'Curriculo',
-      component: Curriculo
+      component: Curriculo,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 })
@@ -85,6 +91,12 @@ const router =  new Router({
 router.beforeEach((to, from, next) => {
   const currentUser = firebase.auth().currentUser;
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+  // console.log("Para ", to.name, "De", from.name);
+  // console.log(from.name);
+  // console.log(currentUser);
+  // if(from.name == 'Cadastro' && currentUser)
+  //   next('Curriculo');
 
   if(requiresAuth && !currentUser) next('/');
   else if(!requiresAuth && currentUser) next('/vagas');

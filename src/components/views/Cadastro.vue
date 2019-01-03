@@ -157,6 +157,9 @@ import {db} from '../../main'
         localStorage.nome = this.nome;
       },
       singUp () {
+        if(firebaseApp.auth().currentUser){
+          this.$router.push('Curriculo')
+        }
         firebaseApp.auth().createUserWithEmailAndPassword(this.email, this.senha).then(
           (user) => {
             console.log('A conta foi criada + ', user);
@@ -173,6 +176,16 @@ import {db} from '../../main'
               deficiencia: this.deficienciasEscolhidas,
               email: this.email,
               uid: uid
+            }).then( () => {
+              firebaseApp.auth().signInWithEmailAndPassword(this.email, this.senha)
+              .then(()=>{
+                // console.log(this.$router);
+                // this.$router.push({ path: 'curriculo' })
+              })
+              .catch(function(error) {
+                console.log(error.code)
+                console.log(error.message)
+              })
             })
           }).catch( err => {
             console.log('Erro: ' + err.message);

@@ -10,7 +10,9 @@
     <content src="http://192.168.15.13:8080" />
     <allow-navigation href="*" />
     <content src="index.html" />
-    <content src="index.html" />
+    <content src="http://172.22.79.205:8080" />
+    <allow-navigation href="http://172.22.79.205:8080" />
+    <allow-navigation href="http://172.20.10.2:8080" />
     <preference name="loadUrlTimeoutValue" value="70000" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />

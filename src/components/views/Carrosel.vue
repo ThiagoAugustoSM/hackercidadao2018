@@ -194,12 +194,13 @@
             <div v-bind:class="{ chose_delimiter: currentI3 }" class="delimiter_circle"></div>
             <div v-bind:class="{ chose_delimiter: currentI4 }" class="delimiter_circle"></div>
         </div>
-        <v-btn to="/login" v-if="(currentI4 === 1)" style="border-radius: 2.5em; margin-top: 3%; height:25px; text-transform:capitalize; background-color:#FDE019; color:#024FA1; font-weight:bold;"> continuar </v-btn>
+        <v-btn to="/vagas" v-if="(currentI4 === 1)" style="border-radius: 2.5em; margin-top: 3%; height:25px; text-transform:capitalize; background-color:#FDE019; color:#024FA1; font-weight:bold;"> continuar </v-btn>
 
     </v-container>
 </template>
 
 <script>
+/* eslint-disable */
   export default {
     data () {
       return {
@@ -261,7 +262,7 @@
                 this.currentI4 = 0;
                 this.currentI3 = 1;
             }
-            console.log("currentI1 : " + this.currentI1 + " currentI2: " + this.currentI2 + " currentI3: " + this.currentI3 + " currentI4: " + this.currentI4 + " " + mode + " " + current);
+            // console.log("currentI1 : " + this.currentI1 + " currentI2: " + this.currentI2 + " currentI3: " + this.currentI3 + " currentI4: " + this.currentI4 + " " + mode + " " + current);
         }
     }
 

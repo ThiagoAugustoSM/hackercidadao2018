@@ -41,3 +41,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Generate APK
+cordova build android --release -- keystore="../my-release-key.keystore" --storePassword=123456 --alias=my-key-alias

@@ -9,7 +9,7 @@
                 <v-combobox class="text-field" style="width: 80%; margin-left: auto; margin-right: auto;margin-top:0" v-model="model" :items="items"  hide-selected label="Experiências" multiple small-chips></v-combobox>
                 <v-combobox clas="text-field" style="width: 80%; margin-left: auto; margin-right: auto;margin-top:0" v-model="model" :items="items"  hide-selected label="Cursos" multiple small-chips></v-combobox>
             </v-form>
-            <v-flex xs12 justify-center style='margin-top:20px;display:flex;background-color:transparent;color:#024fa1;'><v-btn to="/vagas/" class="btn-prox" style="color:#024fa1;">Salvar dados</v-btn></v-flex>
+            <v-flex xs12 justify-center style='margin-top:20px;display:flex;background-color:transparent;color:#024fa1;'><v-btn class="btn-prox" style="color:#024fa1;">Salvar dados</v-btn></v-flex>
         </v-layout>
     </v-container>
 </template>
